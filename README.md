@@ -2,8 +2,8 @@
 
 This project implements **two fully responsive single-page landing pages** for private universities, wired to a **Pipedream lead-capture workflow** and a set of **simple + nested JSON APIs**.
 
-- LP-1: `Aurora Tech University` → `lp-aurora.html`
-- LP-2: `Novus School of Business` → `lp-novus.html`
+- LP-1: `Aurora Tech University` → Django route `/` (root URL)
+- LP-2: `Novus School of Business` → Django route `/lp-novus/`
 
 Both are intentionally custom-designed (no CSS frameworks) so your submission looks **unique**.
 
@@ -11,8 +11,8 @@ Both are intentionally custom-designed (no CSS frameworks) so your submission lo
 
 ## 1. Files & Structure
 
-- `lp-aurora.html` – Landing Page 1 (engineering-focussed private university).
-- `lp-novus.html` – Landing Page 2 (business school).
+- `landing/templates/landing/lp_aurora.html` – Landing Page 1 (engineering-focussed private university, Django template).
+- `landing/templates/landing/lp_novus.html` – Landing Page 2 (business school, Django template).
 - `assets/styles.css` – Shared styling (gradients, layout, responsive).
 - `assets/app.js` – Shared behaviour:
   - Lead form submission → Pipedream webhook (AJAX, no page refresh).
@@ -22,13 +22,19 @@ Both are intentionally custom-designed (no CSS frameworks) so your submission lo
 - `assets/api-simple.json` – Simple JSON API example.
 - `assets/api-nested.json` – Nested JSON API example.
 
-When deployed to any static host (Netlify, Vercel, GitHub Pages), your APIs are automatically available over HTTPS, for example:
+When deployed to a Django-compatible host (e.g. Render) with static files served at `/static/`, your JSON "APIs" are available over HTTPS, for example:
 
-- `https://YOUR_DOMAIN/assets/api-simple.json`
-- `https://YOUR_DOMAIN/assets/api-nested.json`
-- `https://YOUR_DOMAIN/assets/fees.json`
+- `https://YOUR_DOMAIN/static/api-simple.json`
+- `https://YOUR_DOMAIN/static/api-nested.json`
+- `https://YOUR_DOMAIN/static/fees.json`
 
-These satisfy the requirement for **simple and nested JSON APIs**.
+In addition, Django exposes JSON endpoints under `/api/`:
+
+- `https://YOUR_DOMAIN/api/universities/` – simple JSON list of universities.
+- `https://YOUR_DOMAIN/api/universities/<slug>/` – nested JSON for a single university.
+- `https://YOUR_DOMAIN/api/fees/` – nested JSON fee structure loaded from `fees.json`.
+
+Together these satisfy the requirement for **simple and nested JSON APIs**.
 
 ---
 
@@ -86,10 +92,10 @@ This satisfies the **Pipedream workflow integration** requirement.
 ## 3. How the Fee Modal Uses JSON / API
 
 - The CTA **“Check Course-wise Fees” / “View Detailed Fee Bands”** opens a modal.
-- `assets/app.js` fetches `assets/fees.json` (over HTTPS in production) and renders a dynamic table for the selected university.
+- `assets/app.js` fetches `/static/fees.json` (over HTTPS in production) and renders a dynamic table for the selected university.
 - `fees.json` is **nested JSON** with programs, ranges and scholarships.
 
-So `https://YOUR_DOMAIN/assets/fees.json` is both:
+So `https://YOUR_DOMAIN/static/fees.json` is both:
 
 - A working JSON endpoint (API).
 - The data source powering your on-page modal.
@@ -98,38 +104,34 @@ So `https://YOUR_DOMAIN/assets/fees.json` is both:
 
 ## 4. Deploying with SSL (Free Hosting)
 
-### Option A – Netlify (simplest)
+This project is built as a small Django app and can be deployed to any free Django-friendly host that provides HTTPS (for example, **Render**).
 
-1. Push this folder to a GitHub repository.
-2. Go to **Netlify → Add new site → Import from Git**.
-3. Select your repo and deploy with default build settings (no build step needed; it is static HTML/JS/CSS).
-4. Once deployed, Netlify gives you an `https://` URL with SSL enabled.
-5. Final URLs to submit:
-   - LP-1: `https://YOUR_NETLIFY_SITE/lp-aurora.html`
-   - LP-2: `https://YOUR_NETLIFY_SITE/lp-novus.html`
-   - Simple API: `https://YOUR_NETLIFY_SITE/assets/api-simple.json`
-   - Nested API: `https://YOUR_NETLIFY_SITE/assets/api-nested.json`
+Typical high-level steps:
 
-### Option B – Vercel or GitHub Pages
+1. Push this project to a GitHub repository.
+2. Create a new web service on your hosting provider (e.g. Render) connected to that repo.
+3. Use the provided `requirements.txt` to install dependencies.
+4. Set the start command to run Django via `gunicorn` (or the platform’s recommended command), e.g. `gunicorn campusorbit.wsgi`.
+5. Ensure `DEBUG` is disabled in production and static files are collected/served.
 
-You can also drop this folder into a repo and enable **GitHub Pages** (served from `main` branch), which gives you an HTTPS domain like:
+Once deployed, the host gives you an `https://` URL with SSL enabled, such as:
 
-- `https://your-github-username.github.io/CampusOrbit/lp-aurora.html`
+- `https://YOUR_DOMAIN/`
 
-Any static host that serves over **HTTPS** is acceptable for the assignment.
+The exact provider (Render, Railway, etc.) does not matter as long as it serves your Django app over **HTTPS**.
 
 ---
 
 ## 5. What to Submit for the Assignment
 
 - **Landing Page URLs** (after deployment):
-  - LP-1: `https://YOUR_DOMAIN/lp-aurora.html`
-  - LP-2: `https://YOUR_DOMAIN/lp-novus.html`
+  - LP-1: `https://YOUR_DOMAIN/`
+  - LP-2: `https://YOUR_DOMAIN/lp-novus/`
 
 - **API URLs** (examples):
-  - Simple JSON: `https://YOUR_DOMAIN/assets/api-simple.json`
-  - Nested JSON: `https://YOUR_DOMAIN/assets/api-nested.json`
-  - Fees JSON: `https://YOUR_DOMAIN/assets/fees.json`
+  - Simple JSON: `https://YOUR_DOMAIN/api/universities/` or `https://YOUR_DOMAIN/static/api-simple.json`
+  - Nested JSON: `https://YOUR_DOMAIN/api/universities/skyline-university/` or `https://YOUR_DOMAIN/static/api-nested.json`
+  - Fees JSON: `https://YOUR_DOMAIN/api/fees/` or `https://YOUR_DOMAIN/static/fees.json`
 
 - **Google Drive Folder Link** containing this codebase.
 
