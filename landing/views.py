@@ -1,5 +1,9 @@
 
 from django.shortcuts import render
+from django.http import JsonResponse, Http404
+from django.conf import settings
+import json
+from pathlib import Path
 
 UNIVERSITIES = {
     "skyline-university": {
@@ -48,3 +52,48 @@ def university_b_landing(request):
     uni = UNIVERSITIES["riverdale-institute"]
     context = {"university": uni}
     return render(request, "landing/university_b.html", context)
+
+
+def lp_aurora(request):
+    """SPA Landing Page 1 (Aurora Tech University)."""
+    return render(request, "landing/lp_aurora.html")
+
+
+def lp_novus(request):
+    """SPA Landing Page 2 (Novus School of Business)."""
+    return render(request, "landing/lp_novus.html")
+
+
+# ---- Simple JSON APIs for assignment ----
+
+def api_universities(request):
+    """Return a simple JSON list of universities with basic info."""
+    data = [
+        {
+            "slug": slug,
+            "name": info["name"],
+            "location": info["location"],
+        }
+        for slug, info in UNIVERSITIES.items()
+    ]
+    return JsonResponse({"universities": data})
+
+
+def api_university_detail(request, slug):
+    """Return nested JSON for a single university (courses, fees, facilities)."""
+    uni = UNIVERSITIES.get(slug)
+    if not uni:
+        raise Http404("University not found")
+    return JsonResponse({"slug": slug, **uni})
+
+
+def api_fees(request):
+    """Return nested JSON fee data loaded from assets/fees.json."""
+    fees_path = Path(settings.BASE_DIR) / "assets" / "fees.json"
+    try:
+        with fees_path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        return JsonResponse({"error": "fees.json not found"}, status=500)
+
+    return JsonResponse({"fees": data})
