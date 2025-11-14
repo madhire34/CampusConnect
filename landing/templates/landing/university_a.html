@@ -1,0 +1,111 @@
+{% extends "landing/base.html" %}
+
+{% block title %}{{ university.name }} | Admissions 2025{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+    <section class="mb-4">
+      <h1 class="display-5 fw-bold">{{ university.name }}</h1>
+      <p class="lead text-muted">{{ university.tagline }}</p>
+      <p><span class="badge bg-secondary">{{ university.location }}</span></p>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="h4">Courses Offered</h2>
+      <ul class="list-group">
+        {% for course in university.courses %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ course.name }}
+            <span class="badge bg-primary rounded-pill">{{ course.duration }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="h4">Fees Overview</h2>
+      <p>{{ university.fees_summary }}</p>
+      <button class="btn btn-outline-primary btn-sm" type="button">
+        Check Course-wise Fees
+      </button>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="h4">Placements</h2>
+      <p>{{ university.placements_summary }}</p>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="h4">Facilities</h2>
+      <div class="d-flex flex-wrap gap-2">
+        {% for fac in university.facilities %}
+          <span class="badge bg-light text-dark border">{{ fac }}</span>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <!-- Right side: lead capture form with CTAs -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h5 mb-3">Apply Now</h2>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Enter your full name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="you@example.com">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Phone Number (10-digit, India)</label>
+            <input type="tel" class="form-control" placeholder="9876543210">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">State</label>
+            <input type="text" class="form-control" placeholder="Your state">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Course Interested</label>
+            <select class="form-select">
+              <option selected disabled>Select a course</option>
+              {% for course in university.courses %}
+                <option>{{ course.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Intake Year</label>
+            <select class="form-select">
+              <option selected disabled>Select year</option>
+              <option>2025</option>
+              <option>2026</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="consentA">
+            <label class="form-check-label" for="consentA">
+              I agree to receive communication from {{ university.name }}.
+            </label>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-primary">Check Course-wise Fees</button>
+            <button type="button" class="btn btn-outline-secondary">Download Brochure</button>
+            <button type="submit" class="btn btn-primary">Apply Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

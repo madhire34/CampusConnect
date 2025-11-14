@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novus School of Business | CampusOrbit Connect</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="theme-novus">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-header__brand">
+        <span class="brand-pill">CampusOrbit Connect</span>
+        <span class="site-header__divider"></span>
+        <span class="site-header__uni-name">Novus School of Business</span>
+      </div>
+      <nav class="site-header__nav">
+        <a href="#overview">Overview</a>
+        <a href="#courses">Programs</a>
+        <a href="#fees">Fees</a>
+        <a href="#placements">Careers</a>
+        <a href="#facilities">Campus</a>
+        <a href="#lead-form" class="nav-link--primary">Apply Now</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <!-- HERO -->
+      <section class="hero hero--reversed" id="overview">
+        <aside class="hero__card hero__card--floating">
+          <h2>Secure your Novus MBA admit</h2>
+          <p>Profile-based admission with rolling interview slots.</p>
+          <form class="lead-form" id="lead-form" data-university="novus-business" novalidate>
+            <div class="field-grid">
+              <label class="field">
+                <span>Full Name</span>
+                <input type="text" name="fullName" placeholder="E.g. Arjun Mehta" required />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@workmail.com" required />
+              </label>
+            </div>
+            <div class="field-grid">
+              <label class="field">
+                <span>Phone Number (India)</span>
+                <input type="tel" name="phone" placeholder="10-digit mobile" minlength="10" maxlength="10" required />
+              </label>
+              <label class="field">
+                <span>State</span>
+                <input type="text" name="state" placeholder="Maharashtra" required />
+              </label>
+            </div>
+            <div class="field-grid">
+              <label class="field">
+                <span>Program Interested</span>
+                <select name="course" required>
+                  <option value="">Select a program</option>
+                  <option value="mba-core">MBA (Core)</option>
+                  <option value="mba-analytics">MBA in Business Analytics</option>
+                  <option value="pgdm-digital">PGDM Digital & Growth</option>
+                  <option value="executive-mba">Executive MBA (Weekend)</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Intake Year</span>
+                <select name="intake" required>
+                  <option value="">Select year</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                  <option>2027</option>
+                </select>
+              </label>
+            </div>
+            <label class="field field--checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>I agree to be contacted by CampusOrbit & Novus School of Business over phone, SMS & email.</span>
+            </label>
+            <div class="form-footer">
+              <button class="btn btn--primary btn--full" type="submit">Submit Profile</button>
+              <p class="form-meta">Takes less than a minute · No application fee</p>
+              <p class="form-message" data-role="form-message" aria-live="polite"></p>
+            </div>
+          </form>
+        </aside>
+        <div class="hero__content">
+          <p class="eyebrow">LP-2 · Private Business School</p>
+          <h1>Build a global business career with <span class="hero__highlight">Novus</span>.</h1>
+          <p class="hero__subtitle">
+            Mumbai-based business school with a strong focus on digital, analytics and growth leadership roles.
+          </p>
+          <div class="hero__cta-row">
+            <button class="btn btn--primary js-open-modal" data-modal="fees-modal" data-university="novus-business">
+              Check Program-wise Fees
+            </button>
+            <button class="btn btn--ghost js-scroll-to" data-target="#placements">View Career Outcomes</button>
+            <button class="btn btn--subtle js-download-brochure" data-university="novus-business">
+              Download Brochure
+            </button>
+          </div>
+          <dl class="hero-metrics hero-metrics--compact">
+            <div>
+              <dt>Top 20</dt>
+              <dd>Emerging B-Schools (Private)</dd>
+            </div>
+            <div>
+              <dt>₹21.4 LPA</dt>
+              <dd>Highest package (MBA Analytics)</dd>
+            </div>
+            <div>
+              <dt>180+</dt>
+              <dd>Corporate partners</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- PROGRAMS -->
+      <section class="section" id="courses">
+        <header class="section__header">
+          <h2>Programs designed for the next decade of business</h2>
+          <p>Strong core + digital-first specialisations.</p>
+        </header>
+        <div class="card-grid card-grid--3">
+          <article class="info-card">
+            <h3>MBA (Core)</h3>
+            <p>2-year residential MBA with specialisations in Marketing, Finance & Operations.</p>
+            <ul>
+              <li>Global immersion in term-3</li>
+              <li>Harvard & IIMA style case pedagogy</li>
+              <li>Student-run investment & consulting clubs</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>MBA in Business Analytics</h3>
+            <p>Blends management with data science, SQL, Python and dashboarding.</p>
+            <ul>
+              <li>Joint projects with analytics firms</li>
+              <li>Capstone with live business problem</li>
+              <li>Access to cloud data labs</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>Executive MBA (Weekend)</h3>
+            <p>For working professionals with 3+ years experience.</p>
+            <ul>
+              <li>Alternate weekend classes</li>
+              <li>Career transition & leadership coaching</li>
+              <li>Optional international study tour</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- FEES & SCHOLARSHIPS PREVIEW -->
+      <section class="section section--split" id="fees">
+        <div>
+          <header class="section__header">
+            <h2>Transparent program fees with ROI in focus</h2>
+            <p>Understand tuition range, hostel charges and scholarships before you take the call.</p>
+          </header>
+          <ul class="pill-list">
+            <li>No hidden exam or library charges</li>
+            <li>Easy EMI options with partner NBFCs</li>
+            <li>Diversity & need-based scholarships</li>
+          </ul>
+          <button class="btn btn--primary js-open-modal" data-modal="fees-modal" data-university="novus-business">
+            View Detailed Fee Bands
+          </button>
+        </div>
+        <aside class="fees-highlight">
+          <p class="fees-highlight__eyebrow">Snapshot</p>
+          <p class="fees-highlight__range">₹7.8L – 11.4L (total)</p>
+          <p class="fees-highlight__note">for 2-year MBA programs, excluding hostel.</p>
+        </aside>
+      </section>
+
+      <!-- CAREERS / PLACEMENTS -->
+      <section class="section" id="placements">
+        <header class="section__header">
+          <h2>Career outcomes from Novus</h2>
+          <p>From growth marketing to product management, Novus alumni lead digital-first teams.</p>
+        </header>
+        <div class="placement-grid">
+          <div class="placement-card">
+            <h3>Recruiters</h3>
+            <ul>
+              <li>Big 4 consulting firms</li>
+              <li>Fintech & consumer internet brands</li>
+              <li>Global capability centres & startups</li>
+            </ul>
+          </div>
+          <div class="placement-card">
+            <h3>Roles</h3>
+            <ul>
+              <li>Business Analyst & Growth Manager</li>
+              <li>Product & Program Management</li>
+              <li>Corporate Finance & Strategy</li>
+            </ul>
+          </div>
+          <div class="placement-card">
+            <h3>Support</h3>
+            <ul>
+              <li>1:1 resume & LinkedIn clinics</li>
+              <li>Peer-led case interview groups</li>
+              <li>Access to alumni mentor network</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAMPUS / FACILITIES -->
+      <section class="section" id="facilities">
+        <header class="section__header">
+          <h2>A boutique campus in the heart of Mumbai</h2>
+          <p>Designed to feel like a co-working space, not a lecture hall complex.</p>
+        </header>
+        <div class="card-grid card-grid--3">
+          <article class="info-card info-card--ghost">
+            <h3>Boardroom-style classrooms</h3>
+            <p>Interactive, discussion-heavy sessions with a maximum of 60 students per section.</p>
+          </article>
+          <article class="info-card info-card--ghost">
+            <h3>City-view breakout zones</h3>
+            <p>Open collaboration spaces overlooking the Mumbai skyline.</p>
+          </article>
+          <article class="info-card info-card--ghost">
+            <h3>Executive lounge & labs</h3>
+            <p>Finance lab with real-time terminals & analytics lab for data projects.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>LP-2 · Novus School of Business · Crafted uniquely for CampusOrbit assignment.</p>
+      <nav>
+        <a href="lp-aurora.html">Aurora Tech (LP-1)</a>
+        <span>·</span>
+        <a href="lp-novus.html" aria-current="page">Novus School of Business (LP-2)</a>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- FEES MODAL (shared structure, populated via JSON/API) -->
+  <div class="modal" id="fees-modal" data-university="novus-business" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop js-close-modal" data-modal-close></div>
+    <div class="modal__body" role="document">
+      <header class="modal__header">
+        <h2>Program-wise Fees · Novus School of Business</h2>
+        <button class="icon-button js-close-modal" data-modal-close aria-label="Close fees modal">×</button>
+      </header>
+      <div class="modal__content" data-role="fees-content">
+        <p class="modal__hint">Loading live fee ranges…</p>
+      </div>
+      <footer class="modal__footer">
+        <p class="modal__note">Data fetched from JSON/API. Exact amounts may vary by academic year.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

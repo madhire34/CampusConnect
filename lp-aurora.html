@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Tech University | CampusOrbit Connect</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="theme-aurora">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-header__brand">
+        <span class="brand-pill">CampusOrbit Connect</span>
+        <span class="site-header__divider"></span>
+        <span class="site-header__uni-name">Aurora Tech University</span>
+      </div>
+      <nav class="site-header__nav">
+        <a href="#overview">Overview</a>
+        <a href="#courses">Courses</a>
+        <a href="#fees">Fees</a>
+        <a href="#placements">Placements</a>
+        <a href="#facilities">Campus Life</a>
+        <a href="#lead-form" class="nav-link--primary">Apply Now</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <!-- HERO -->
+      <section class="hero" id="overview">
+        <div class="hero__content">
+          <p class="eyebrow">LP-1 · Private Engineering University</p>
+          <h1>Engineer the future at <span class="hero__highlight">Aurora Tech</span>.</h1>
+          <p class="hero__subtitle">
+            A practice-first engineering university in Bangalore with industry-backed labs, 120+ hiring partners,
+            and a campus designed for builders.
+          </p>
+          <div class="hero__cta-row">
+            <button class="btn btn--primary js-open-modal" data-modal="fees-modal" data-university="aurora-tech">
+              Check Course-wise Fees
+            </button>
+            <button class="btn btn--ghost js-scroll-to" data-target="#lead-form">Apply Now</button>
+            <button class="btn btn--subtle js-download-brochure" data-university="aurora-tech">
+              Download Brochure
+            </button>
+          </div>
+          <dl class="hero-metrics">
+            <div>
+              <dt>120+ Hiring Partners</dt>
+              <dd>Top tech companies & product startups</dd>
+            </div>
+            <div>
+              <dt>₹18.7 LPA</dt>
+              <dd>Highest package for 2024 batch</dd>
+            </div>
+            <div>
+              <dt>93% Placements</dt>
+              <dd>Within 6 months of graduation</dd>
+            </div>
+          </dl>
+        </div>
+        <aside class="hero__card">
+          <h2>Fast-track your Aurora Tech admission</h2>
+          <p>1-minute form. No application fee through CampusOrbit.</p>
+          <form class="lead-form" id="lead-form" data-university="aurora-tech" novalidate>
+            <div class="field-grid">
+              <label class="field">
+                <span>Full Name</span>
+                <input type="text" name="fullName" placeholder="E.g. Riya Sharma" required />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+            <div class="field-grid">
+              <label class="field">
+                <span>Phone Number (India)</span>
+                <input type="tel" name="phone" placeholder="10-digit mobile" minlength="10" maxlength="10" required />
+              </label>
+              <label class="field">
+                <span>State</span>
+                <input type="text" name="state" placeholder="Karnataka" required />
+              </label>
+            </div>
+            <div class="field-grid">
+              <label class="field">
+                <span>Course Interested</span>
+                <select name="course" required>
+                  <option value="">Select a course</option>
+                  <option value="btech-cse">B.Tech Computer Science & Engineering</option>
+                  <option value="btech-ai">B.Tech Artificial Intelligence</option>
+                  <option value="btech-ece">B.Tech Electronics & Communication</option>
+                  <option value="mtech-data">M.Tech Data Engineering</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Intake Year</span>
+                <select name="intake" required>
+                  <option value="">Select year</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                  <option>2027</option>
+                </select>
+              </label>
+            </div>
+            <label class="field field--checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>I agree to be contacted by CampusOrbit & Aurora Tech over phone, SMS & email.</span>
+            </label>
+            <div class="form-footer">
+              <button class="btn btn--primary btn--full" type="submit">Submit Application</button>
+              <p class="form-meta">Secure · SSL encrypted · No spam</p>
+              <p class="form-message" data-role="form-message" aria-live="polite"></p>
+            </div>
+          </form>
+        </aside>
+      </section>
+
+      <!-- COURSES -->
+      <section class="section" id="courses">
+        <header class="section__header">
+          <h2>Industry-shaped programs</h2>
+          <p>Co-designed with engineers from top product companies.</p>
+        </header>
+        <div class="card-grid card-grid--3">
+          <article class="info-card">
+            <h3>B.Tech Computer Science & Engineering</h3>
+            <p>Full-stack, cloud, and DevOps with a strong foundation in CS fundamentals.</p>
+            <ul>
+              <li>4-year residential program</li>
+              <li>Paid industry internship in 7th semester</li>
+              <li>Hands-on projects every term</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>B.Tech Artificial Intelligence</h3>
+            <p>Deep dive into ML, data engineering and responsible AI systems.</p>
+            <ul>
+              <li>AI Studio with GPU cluster access</li>
+              <li>Capstone with real startup data</li>
+              <li>Mentorship from ML engineers</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3>M.Tech Data Engineering</h3>
+            <p>Weekend program for working professionals in Bangalore.</p>
+            <ul>
+              <li>Hybrid classes (online + on-campus)</li>
+              <li>Evening lab hours & office-friendly schedule</li>
+              <li>Career support for role transition</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- FEES & SCHOLARSHIPS PREVIEW -->
+      <section class="section section--split" id="fees">
+        <div>
+          <header class="section__header">
+            <h2>Transparent fees & smart scholarships</h2>
+            <p>View course-wise fee bands and scholarship slabs before you apply.</p>
+          </header>
+          <ul class="pill-list">
+            <li>Zero hidden charges</li>
+            <li>Education loan support</li>
+            <li>Merit & need-based scholarships</li>
+          </ul>
+          <button class="btn btn--primary js-open-modal" data-modal="fees-modal" data-university="aurora-tech">
+            View Detailed Fee Structure
+          </button>
+        </div>
+        <aside class="fees-highlight">
+          <p class="fees-highlight__eyebrow">Snapshot</p>
+          <p class="fees-highlight__range">₹1.6L – 2.4L / year</p>
+          <p class="fees-highlight__note">for flagship B.Tech programs (before scholarships).</p>
+        </aside>
+      </section>
+
+      <!-- PLACEMENTS -->
+      <section class="section" id="placements">
+        <header class="section__header">
+          <h2>Placement outcomes that actually matter</h2>
+          <p>From early-stage startups to unicorns, Aurora Tech grads ship code everywhere.</p>
+        </header>
+        <div class="placement-grid">
+          <div class="placement-card">
+            <h3>Top recruiters</h3>
+            <p>Product + startup heavy placement pipeline.</p>
+            <ul>
+              <li>Flipkart, Atlassian, Razorpay</li>
+              <li>Freshworks, Swiggy, Zoho</li>
+              <li>30+ high-growth startups</li>
+            </ul>
+          </div>
+          <div class="placement-card">
+            <h3>Career support</h3>
+            <ul>
+              <li>1:1 mock interviews with engineers</li>
+              <li>Portfolio & GitHub review clinics</li>
+              <li>Dedicated placement mentors</li>
+            </ul>
+          </div>
+          <div class="placement-card">
+            <h3>Outcomes</h3>
+            <ul>
+              <li>Median CTC: ₹8.4 LPA</li>
+              <li>30% students in product companies</li>
+              <li>Global roles across 6 countries</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FACILITIES -->
+      <section class="section" id="facilities">
+        <header class="section__header">
+          <h2>A campus built like a startup floor</h2>
+          <p>More labs, fewer lecture halls. Designed for builders and tinkerers.</p>
+        </header>
+        <div class="card-grid card-grid--3">
+          <article class="info-card info-card--ghost">
+            <h3>24×7 Maker Lab</h3>
+            <p>Rapid prototyping space with 3D printers, IoT kits & robotics benches.</p>
+          </article>
+          <article class="info-card info-card--ghost">
+            <h3>Cloud-native Lab</h3>
+            <p>AWS Academy & GitOps playground for infra-as-code projects.</p>
+          </article>
+          <article class="info-card info-card--ghost">
+            <h3>Student Pods</h3>
+            <p>Focus pods, war-rooms & terrace amphitheatre for meetups.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>LP-1 · Aurora Tech University · Crafted uniquely for CampusOrbit assignment.</p>
+      <nav>
+        <a href="lp-aurora.html" aria-current="page">Aurora Tech (LP-1)</a>
+        <span>·</span>
+        <a href="lp-novus.html">Novus School of Business (LP-2)</a>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- FEES MODAL (shared structure, populated via JSON/API) -->
+  <div class="modal" id="fees-modal" data-university="aurora-tech" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop js-close-modal" data-modal-close></div>
+    <div class="modal__body" role="document">
+      <header class="modal__header">
+        <h2>Course-wise Fees · Aurora Tech University</h2>
+        <button class="icon-button js-close-modal" data-modal-close aria-label="Close fees modal">×</button>
+      </header>
+      <div class="modal__content" data-role="fees-content">
+        <p class="modal__hint">Loading live fee ranges…</p>
+      </div>
+      <footer class="modal__footer">
+        <p class="modal__note">Data fetched from JSON/API. Exact amounts may vary by academic year.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "university": "Aurora Tech University",
+  "city": "Bangalore",
+  "streams": [
+    {
+      "name": "Engineering",
+      "programs": [
+        {
+          "code": "CSE",
+          "title": "Computer Science & Engineering",
+          "intakes": [
+            { "year": 2025, "seats": 180 },
+            { "year": 2026, "seats": 210 }
+          ]
+        },
+        {
+          "code": "AI",
+          "title": "Artificial Intelligence",
+          "intakes": [
+            { "year": 2025, "seats": 120 },
+            { "year": 2026, "seats": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Management",
+      "programs": [
+        {
+          "code": "MBA-TECH",
+          "title": "MBA in Technology Management",
+          "intakes": [
+            { "year": 2025, "seats": 60 }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2025-01-01T00:00:00.000Z",
+    "source": "static-json-api",
+    "description": "Nested JSON API example used by CampusOrbit assignment."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "aurora-tech": {
+    "label": "Aurora Tech University",
+    "currency": "INR",
+    "programs": [
+      {
+        "name": "B.Tech Computer Science & Engineering",
+        "duration": "4 years (8 semesters)",
+        "annualRange": "1,60,000 – 2,10,000",
+        "totalRange": "6,40,000 – 8,40,000",
+        "scholarships": ["Merit-based (up to 50%)", "Women in Tech", "Defence background"]
+      },
+      {
+        "name": "B.Tech Artificial Intelligence",
+        "duration": "4 years (8 semesters)",
+        "annualRange": "1,80,000 – 2,40,000",
+        "totalRange": "7,20,000 – 9,60,000",
+        "scholarships": ["Merit-based (JEE/12th)", "Need-based", "Sports quota"]
+      },
+      {
+        "name": "B.Tech Electronics & Communication",
+        "duration": "4 years (8 semesters)",
+        "annualRange": "1,40,000 – 1,90,000",
+        "totalRange": "5,60,000 – 7,60,000",
+        "scholarships": ["Early application", "State topper"]
+      },
+      {
+        "name": "M.Tech Data Engineering",
+        "duration": "2 years (4 semesters)",
+        "annualRange": "1,95,000 – 2,25,000",
+        "totalRange": "3,90,000 – 4,50,000",
+        "scholarships": ["Working professional discount", "Alumni"]
+      }
+    ]
+  },
+  "novus-business": {
+    "label": "Novus School of Business",
+    "currency": "INR",
+    "programs": [
+      {
+        "name": "MBA (Core)",
+        "duration": "2 years (4 semesters)",
+        "annualRange": "3,60,000 – 4,20,000",
+        "totalRange": "7,20,000 – 8,40,000",
+        "scholarships": ["CAT percentile-based", "Academic excellence", "Need-based"]
+      },
+      {
+        "name": "MBA in Business Analytics",
+        "duration": "2 years (4 semesters)",
+        "annualRange": "4,20,000 – 4,80,000",
+        "totalRange": "8,40,000 – 9,60,000",
+        "scholarships": ["Diversity scholarship", "Women in Analytics"]
+      },
+      {
+        "name": "PGDM Digital & Growth",
+        "duration": "2 years (4 semesters)",
+        "annualRange": "3,10,000 – 3,80,000",
+        "totalRange": "6,20,000 – 7,60,000",
+        "scholarships": ["Startup founder", "Early bird"]
+      },
+      {
+        "name": "Executive MBA (Weekend)",
+        "duration": "18 months",
+        "annualRange": "3,80,000 – 4,40,000",
+        "totalRange": "5,70,000 – 6,60,000",
+        "scholarships": ["Company-sponsored", "Alumni"]
+      }
+    ]
+  }
+}
