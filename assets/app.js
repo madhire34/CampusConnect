@@ -3,7 +3,7 @@
 // - Modal with dynamic fees loaded from JSON (acts as a nested JSON API)
 // - Smooth scroll for CTA link
 const PIPEDREAM_WEBHOOK_URL = "https://eowyb15a9thcajj.m.pipedream.net";
-const FEES_JSON_URL = "assets/fees.json";
+const FEES_JSON_URL = "/static/fees.json";
 
 let cachedFees = null;
 

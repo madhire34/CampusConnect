@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     # Landing pages (LP-1 and LP-2)
-    path('lp-aurora/', views.lp_aurora, name='lp_aurora'),
+    path('', views.lp_aurora, name='lp_aurora'),
     path('lp-novus/', views.lp_novus, name='lp_novus'),
 
     # Simple JSON APIs for assignment
